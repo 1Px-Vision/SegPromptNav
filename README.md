@@ -103,7 +103,7 @@ EXAMPLE APPLICATION WORKFLOW
 ------------------------------------------------------------------
 
 A segmentation result is first generated from an aerial image:
-
+```
 image_path = "/content/test_aerial.jpg"
 
 result = predict_and_visualize_image(
@@ -118,13 +118,14 @@ result = predict_and_visualize_image(
     save_dir=predictions_dir,
     show=True
 )
-
+```
 Then the class-id segmentation map is extracted:
-
-pred_seg_class_map = result["pred_mask"]
+```
+pred_seg_class_map = result["pred_class_map"]
+```
 
 This map is passed into the LLM navigation agent:
-
+```
 action, meta = agent.predict_from_state(
     dist_to_goal=dist_to_goal,
     cur_clear=cur_clear,
@@ -136,7 +137,7 @@ action, meta = agent.predict_from_state(
     class_map=pred_seg_class_map,
     id2name=id2name,
 )
-
+```
 The agent builds semantic prompt tokens, creates a prompt, and predicts the best high-level navigation action.
 
 ------------------------------------------------------------------
@@ -145,7 +146,7 @@ EXAMPLE GENERATED PROMPT
 
 You are a UAV navigation agent in a GPS-denied environment.
 Use the semantic navigation state below to choose one safe high-level action.
-
+```
 PROMPT_TOKENS:
 CLEAR_MID GOAL_LEFT LLM_STRAIGHT SPD_MID RMSE_LOW MISSION_EARLY RISK_LOW GOAL_FAR FRONT_OPEN ROAD_PRESENT ROAD_LEFT VEH_NEAR BLDG_NEAR VEG_NEAR XWALK_ON
 
@@ -158,7 +159,7 @@ ACT_RIGHT_BIAS
 ACT_LLM_MORE
 ACT_LLM_LESS
 ACT_SAFE_MODE
-
+```
 Return only the best action token.
 
 ------------------------------------------------------------------
@@ -166,7 +167,7 @@ PROJECT STRUCTURE
 ------------------------------------------------------------------
 
 A typical structure for this repository can be:
-
+```
 SegPromptNav/
 |
 |-- README.md
@@ -194,7 +195,7 @@ SegPromptNav/
 `-- outputs/
     |-- overlays/
     `-- predictions/
-
+```
 Adjust this structure to match your repository.
 
 ------------------------------------------------------------------
@@ -203,13 +204,13 @@ INSTALLATION
 
 Clone the repository:
 
-git clone https://github.com/your-username/SegPromptNav.git
+git clone https://github.com/1Px-Vision/SegPromptNav.git
 cd SegPromptNav
 
 Install dependencies:
-
+```
 pip install -r requirements.txt
-
+```
 ------------------------------------------------------------------
 REQUIREMENTS
 ------------------------------------------------------------------
@@ -290,27 +291,14 @@ If you use this work in academic research, please cite the related paper or repo
 
 @misc{segpromptnav,
   title={SegPromptNav: Segmentation-Guided LLM Navigation for GPS-Denied UAVs},
-  author={Your Name},
+  author={1Px-Vision},
   year={2026},
   note={GitHub repository}
 }
 
-------------------------------------------------------------------
-LICENSE
-------------------------------------------------------------------
-
-Specify your preferred license here, for example:
-
-- MIT License
-- Apache 2.0
-- GPL-3.0
-
-Example:
-
-This project is licensed under the MIT License.
 
 ------------------------------------------------------------------
-ACKNOWLEDGMENTS
+Note
 ------------------------------------------------------------------
 
 This project builds on ideas from:
