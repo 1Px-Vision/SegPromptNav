@@ -189,7 +189,7 @@ SegPromptNav/
 |
 |-- examples/
 |   |-- test_aerial.jpg
-|   `-- demo_notebook.ipynb
+|   `-- Deploy_Sementation_drone_LLM.ipynb
 |
 `-- outputs/
     |-- overlays/
