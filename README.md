@@ -31,8 +31,9 @@ The navigation pipeline follows this structure:
 
 Instead of sending raw images to the language model, the system generates a compact symbolic prompt such as:
 
-```text
+```
 CLEAR_MID GOAL_LEFT LLM_STRAIGHT SPD_MID RMSE_LOW MISSION_EARLY RISK_LOW GOAL_FAR FRONT_OPEN ROAD_PRESENT ROAD_LEFT VEH_NEAR BLDG_NEAR VEG_NEAR XWALK_ON
+```
 
 ### Features
 * Prompt-based UAV navigation in GPS-denied environments
