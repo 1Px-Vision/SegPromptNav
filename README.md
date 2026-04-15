@@ -63,4 +63,37 @@ The LLM prompt model predicts one of the following actions:
 
 These actions are then translated into changes in speed cap, steering bias, or semantic-control weighting.
 
+---
+## PROMPT STRUCTURE
 
+The prompt combines two sources of information.
+
+1. Base navigation tokens
+These come from the current navigation state:
+
+- clearance level
+- heading error
+- previous steering bias
+- speed scale
+- path tracking RMSE
+- mission progress
+- risk level
+- distance to goal
+
+2. Segmentation-derived tokens
+These come from the segmented semantic map:
+
+- front openness
+- road presence
+- road curvature
+- nearby vehicles
+- nearby buildings
+- nearby vegetation
+- crosswalk presence
+
+Example combined prompt:
+
+```
+CLEAR_MID GOAL_LEFT LLM_STRAIGHT SPD_MID RMSE_LOW MISSION_MID RISK_LOW GOAL_MID FRONT_OPEN ROAD_PRESENT ROAD_LEFT VEH_NEAR BLDG_NEAR VEG_NEAR XWALK_ON
+
+```
