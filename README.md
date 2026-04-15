@@ -34,3 +34,32 @@ Instead of sending raw images to the language model, the system generates a comp
 ```text
 CLEAR_MID GOAL_LEFT LLM_STRAIGHT SPD_MID RMSE_LOW MISSION_EARLY RISK_LOW GOAL_FAR FRONT_OPEN ROAD_PRESENT ROAD_LEFT VEH_NEAR BLDG_NEAR VEG_NEAR XWALK_ON
 
+### Features
+* Prompt-based UAV navigation in GPS-denied environments
+* Semantic segmentation to prompt-token conversion
+* Lightweight TinyGPT-style prompt model
+* High-level action generation for navigation adaptation
+* Segmentation-aware prompt engineering
+* Integration with waypoint navigation and control loops
+* Support for aerial urban imagery and obstacle-aware scene reasoning
+* Research-friendly modular Python implementation
+
+---
+
+## NAVIGATION ACTIONS
+
+
+The LLM prompt model predicts one of the following actions:
+
+- ACT_KEEP
+- ACT_SLOW
+- ACT_FAST
+- ACT_LEFT_BIAS
+- ACT_RIGHT_BIAS
+- ACT_LLM_MORE
+- ACT_LLM_LESS
+- ACT_SAFE_MODE
+
+These actions are then translated into changes in speed cap, steering bias, or semantic-control weighting.
+
+
