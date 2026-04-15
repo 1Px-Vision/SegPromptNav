@@ -1,9 +1,7 @@
 
 # SegPromptNav: Segmentation-Guided LLM Navigation for GPS-Denied UAVs
 
-SegPromptNav is a research-oriented UAV navigation framework for GPS-denied environments that combines semantic image segmentation, prompt-based LLM reasoning, and lightweight control adaptation for autonomous aerial navigation.
-
-The system converts segmentation outputs into compact semantic prompt tokens, then uses a lightweight LLM-style prompt model to generate high-level navigation actions such as slowing down, biasing left or right, or entering safe mode. These actions are fused with the low-level navigation and control stack to improve decision-making in cluttered or uncertain environments.
+SegPromptNav is a research-oriented UAV navigation framework for GPS-denied environments that combines semantic image segmentation, prompt-based LLM reasoning, and lightweight control adaptation for autonomous aerial navigation. The system converts segmentation outputs into compact semantic prompt tokens, then uses a lightweight LLM-style prompt model to generate high-level navigation actions such as slowing down, biasing left or right, or entering safe mode. These actions are fused with the low-level navigation and control stack to improve decision-making in cluttered or uncertain environments.
 
 ---
 
