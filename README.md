@@ -7,6 +7,8 @@ SegPromptNav is a research-oriented UAV navigation framework for GPS-denied envi
 
 ## Overview
 
+![](https://github.com/1Px-Vision/SegPromptNav/blob/main/waypoint_Q_learning.jpg)
+
 Traditional UAV navigation systems often rely on geometric planning and reactive control alone. In complex GPS-denied scenes such as urban canyons, road intersections, obstacle-dense corridors, or partially structured environments, semantic understanding can improve navigation decisions.
 ![](https://github.com/1Px-Vision/SegPromptNav/blob/main/Segmentation_LLM.jpg)
 
