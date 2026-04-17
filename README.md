@@ -7,8 +7,6 @@ SegPromptNav is a research-oriented UAV navigation framework for GPS-denied envi
 
 ## Overview
 
-![](https://github.com/1Px-Vision/SegPromptNav/blob/main/waypoint_Q_learning.jpg)
-
 Traditional UAV navigation systems often rely on geometric planning and reactive control alone. In complex GPS-denied scenes such as urban canyons, road intersections, obstacle-dense corridors, or partially structured environments, semantic understanding can improve navigation decisions.
 ![](https://github.com/1Px-Vision/SegPromptNav/blob/main/Segmentation_LLM.jpg)
 
@@ -50,6 +48,7 @@ CLEAR_MID GOAL_LEFT LLM_STRAIGHT SPD_MID RMSE_LOW MISSION_EARLY RISK_LOW GOAL_FA
 
 ## NAVIGATION ACTIONS
 
+![](https://github.com/1Px-Vision/SegPromptNav/blob/main/waypoint_Q_learning.jpg)
 
 The LLM prompt model predicts one of the following actions:
 
