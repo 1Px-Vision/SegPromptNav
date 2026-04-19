@@ -7,7 +7,7 @@ SegPromptNav is a research-oriented UAV navigation framework for GPS-denied envi
 
 ## Overview
 
-Traditional UAV navigation systems often rely on geometric planning and reactive control alone. In complex GPS-denied scenes such as urban canyons, road intersections, obstacle-dense corridors, or partially structured environments, semantic understanding can improve navigation decisions.
+Traditional UAV navigation systems often rely solely on geometric planning and reactive control. In complex GPS-denied scenes such as urban canyons, road intersections, obstacle-dense corridors, or partially structured environments, semantic understanding can improve navigation decisions.
 ![](https://github.com/1Px-Vision/SegPromptNav/blob/main/Segmentation_LLM.jpg)
 
 This project introduces a prompt-based navigation layer that:
@@ -18,7 +18,7 @@ This project introduces a prompt-based navigation layer that:
 - predicts a high-level action for safe motion adaptation,
 - integrates that action into the navigation controller.
 
-The framework is designed for simulation, experimentation, and research on agent-driven UAV autonomy.
+The framework is designed for simulation, experimentation, and research on agent-driven UAV autonomy. The proposed workflow begins with the user defining the start and goal positions directly on the input image. A semantic segmentation module then analyzes the scene and classifies each region as either free space or an obstacle. Using this segmented representation, the navigation module constructs a traversability grid and computes an obstacle-aware waypoint path from the start to the goal. A local waypoint is selected from the planned path to guide the drone progressively toward the final destination while avoiding collisions. The planned route is drawn over the original image, and all relevant navigation data are saved in a JSON mapping file, including waypoint coordinates, planner metadata, prompt-based navigation tokens, selected action, and control outputs. This JSON file can later be read to reconstruct the route, redraw the navigation overlay, and provide step-by-step motion commands for the drone.
 
 ---
 
