@@ -23,7 +23,9 @@ This project introduces a prompt-based navigation layer that:
 
 The framework is designed for simulation, experimentation, and research on agent-driven UAV autonomy. The proposed workflow begins with the user defining the start and goal positions directly on the input image. A semantic segmentation module then analyzes the scene and classifies each region as either free space or an obstacle. Using this segmented representation, the navigation module constructs a traversability grid and computes an obstacle-aware waypoint path from the start to the goal. A local waypoint is selected from the planned path to guide the drone progressively toward the final destination while avoiding collisions. The planned route is drawn over the original image, and all relevant navigation data are saved in a JSON mapping file, including waypoint coordinates, planner metadata, prompt-based navigation tokens, selected action, and control outputs. This JSON file can later be read to reconstruct the route, redraw the navigation overlay, and provide step-by-step motion commands for the drone.
 
+![](https://github.com/1Px-Vision/SegPromptNav/blob/main/nav_from_json.png)
 
+The navigation path can be reconstructed by reading the saved JSON navigation file, which stores the planned waypoint sequence, start and goal positions, drone state, and navigation metadata. Once loaded, the waypoint coordinates are parsed and drawn over the original image to visualize the planned route from the start point to the goal while preserving the obstacle-aware trajectory generated from segmentation. This allows the system to replay, verify, and reuse the navigation path for visualization or for step-by-step drone guidance.
 
 
 ---
