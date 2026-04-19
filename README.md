@@ -70,7 +70,42 @@ The LLM prompt model predicts one of the following actions:
 - ACT_SAFE_MODE
 
 These actions are then translated into changes in speed cap, steering bias, or semantic-control weighting.
+```
+"prompt_tokens": [
+      "PATH_EXISTS_YES",
+      "FRONT_CONSTRAINED",
+      "GOAL_TURN_HARD_RIGHT",
+      "LOCAL_TURN_HARD_RIGHT",
+      "CORRIDOR_LEFT_CURVING",
+      "SPEED_POLICY_SLOW",
+      "DETOUR_RATIO_1.20",
+      "LOCAL_WP_DIST_51.6",
+      "GOAL_DIST_562.1",
+      "RULE_FOLLOW_LOCAL_WAYPOINT_FIRST",
+      "RULE_PREFER_TRAVERSABLE_CORRIDOR_OVER_DIRECT_GOAL_LINE",
+      "RULE_SAFE_MODE_BEFORE_REPLAN_IF_PATH_EXISTS",
+      "RULE_REPLAN_ONLY_IF_NO_CONTINUOUS_PATH",
+      "RULE_AVOID_FORWARD_FAST_IN_CLUTTER_OR_INTERSECTION",
+      "CLEAR_MID",
+      "GOAL_RIGHT_HARD",
+      "LLM_STRAIGHT",
+      "SPD_MID",
+      "RMSE_LOW",
+      "MISSION_EARLY",
+      "RISK_LOW",
+      "GOAL_FAR",
+      "FRONT_BLOCKED",
+      "ROAD_MISSING",
+      "ROAD_STRAIGHT",
+      "VEH_NONE",
+      "BLDG_FAR",
+      "VEG_FAR",
+      "XWALK_OFF",
+      "LEFT_TIGHT",
+      "RIGHT_TIGHT"
+    ],
 
+```
 ---
 ## PROMPT STRUCTURE
 
