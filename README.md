@@ -285,6 +285,19 @@ REPLAN_PATH
 STOP_AT_GOAL
 ```
 
+**4. Waypoint Tracking**
+
+The navigation path is represented by a sequence of waypoints. The agent follows these waypoints using the estimated pose from the VIO-Kalman module.
+
+The controller continuously evaluates:
+
+Distance to the next waypoint.
+Heading error.
+Lateral path error.
+Obstacle proximity.
+Final goal distance.
+
+When the agent reaches one waypoint, the system automatically switches to the next one until the final goal is reached.
 Based on this information, the agent generates navigation actions such as:
 ------------------------------------------------------------------
 PROJECT STRUCTURE
