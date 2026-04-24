@@ -205,6 +205,11 @@ ACT_SAFE_MODE
 ```
 Return only the best action token.
 
+---
+# GPS-Denied Outdoor Street Navigation with Visual–Inertial Odometry, Kalman Filtering, and Agent-Based Navigation
+
+In a GPS-denied outdoor street environment, the system uses Visual–Inertial Odometry (VIO), a Kalman filter–based state estimator, and an agent-based navigation planner to estimate the robot pose, follow waypoints, and avoid obstacles without relying on GPS signals. The proposed system is designed for urban scenarios such as streets, intersections, sidewalks, buildings, parked vehicles, trees, and narrow navigation corridors, where GPS signals may be degraded, blocked, or unavailable.
+
 ------------------------------------------------------------------
 PROJECT STRUCTURE
 ------------------------------------------------------------------
