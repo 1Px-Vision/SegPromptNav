@@ -237,6 +237,20 @@ Agent-Based Navigation
 Waypoint Tracking and Control
 ```
 
+**1. Visual–Inertial Odometry Module**
+
+The Visual–Inertial Odometry module estimates the relative motion of the agent using camera frames and inertial measurements.
+
+The visual odometry component extracts motion information from consecutive image frames, while the IMU provides acceleration and angular velocity data. These two sources are fused to improve localization accuracy in environments where GPS is unavailable.
+
+Main functions
+* Detect visual features from street images.
+* Track feature movement between frames.
+* Estimate camera motion.
+* Integrate IMU acceleration and angular velocity.
+* Estimate local position, velocity, and orientation.
+* Reduce drift using visual correction.
+
 ------------------------------------------------------------------
 PROJECT STRUCTURE
 ------------------------------------------------------------------
