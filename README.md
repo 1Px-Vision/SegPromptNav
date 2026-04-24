@@ -287,18 +287,26 @@ STOP_AT_GOAL
 
 **4. Waypoint Tracking**
 
-The navigation path is represented by a sequence of waypoints. The agent follows these waypoints using the estimated pose from the VIO-Kalman module.
+The navigation path is represented by a sequence of waypoints. The agent follows these waypoints using the estimated pose from the VIO-Kalman module. The controller continuously evaluates:
 
-The controller continuously evaluates:
+* Distance to the next waypoint.
+* Heading error.
+* Lateral path error.
+* Obstacle proximity.
+* Final goal distance.
 
-Distance to the next waypoint.
-Heading error.
-Lateral path error.
-Obstacle proximity.
-Final goal distance.
+### Navigation Pipeline
+1. Read camera frame and IMU data.
+2. Extract visual features from the image.
+3. Estimate visual displacement between frames.
+4. Predict motion using IMU data.
+5. Fuse visual and inertial data using a Kalman filter.
+6. Estimate the current agent pose.
+7. Select the next waypoint.
+8. Compute heading and distance errors.
+9. Generate an agent-navigation action.
+10. Update the trajectory and continue until the goal is reached.
 
-When the agent reaches one waypoint, the system automatically switches to the next one until the final goal is reached.
-Based on this information, the agent generates navigation actions such as:
 ------------------------------------------------------------------
 PROJECT STRUCTURE
 ------------------------------------------------------------------
