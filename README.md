@@ -239,9 +239,7 @@ Waypoint Tracking and Control
 
 **1. Visual–Inertial Odometry Module**
 
-The Visual–Inertial Odometry module estimates the relative motion of the agent using camera frames and inertial measurements.
-
-The visual odometry component extracts motion information from consecutive image frames, while the IMU provides acceleration and angular velocity data. These two sources are fused to improve localization accuracy in environments where GPS is unavailable.
+The Visual–Inertial Odometry module estimates the relative motion of the agent using camera frames and inertial measurements. The visual odometry component extracts motion information from consecutive image frames, while the IMU provides acceleration and angular velocity data. These two sources are fused to improve localization accuracy in environments where GPS is unavailable.
 
 Main functions
 * Detect visual features from street images.
@@ -251,6 +249,43 @@ Main functions
 * Estimate local position, velocity, and orientation.
 * Reduce drift using visual correction.
 
+**2. Kalman Filter State Estimation**
+
+A Kalman filter is used to fuse noisy measurements from the camera and IMU. The filter provides a smoother and more stable estimate of the agent state.
+
+The estimated state can include:
+```
+x-position
+y-position
+z-position
+velocity
+yaw angle
+pitch angle
+roll angle
+orientation rate
+```
+**3. Agent-Based Navigation**
+
+The agent-navigation module uses the estimated state from the Kalman filter to make navigation decisions.
+The agent receives:
+* Current estimated position.
+* Current heading angle.
+* Target waypoint.
+* Distance to obstacles.
+* Path-tracking error.
+* Mission status.
+```
+MOVE_FORWARD
+TURN_LEFT
+TURN_RIGHT
+SLOW_DOWN
+AVOID_OBSTACLE
+FOLLOW_WAYPOINT
+REPLAN_PATH
+STOP_AT_GOAL
+```
+
+Based on this information, the agent generates navigation actions such as:
 ------------------------------------------------------------------
 PROJECT STRUCTURE
 ------------------------------------------------------------------
